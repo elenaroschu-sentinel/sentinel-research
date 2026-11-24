@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sentinel-research
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-6.2-sol
+      - key: NODE_VERSION
+        value: 22
